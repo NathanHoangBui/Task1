@@ -1,89 +1,27 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="Task1_SelfPractice_1">
 <head>
-    <title>HTML Elements Reference</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Basic Task 1</title>
+    <title>@ViewData["Title"] - FullStackTutorial</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Task1_SelfPractice_1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FullStackTutorial.styles.css" asp-append-version="true" />
 </head>
-
-
-    <body ng-controller="page1Controller"
-        ng-init="init()">
-
-
-
-
+<body>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
-
         </main>
-
     </div>
-    @* <div ng-repeat="product in products">
-        <span ng-bind="product.name | json"></span>
-
-        <span ng-bind="product.productId | json"></span>
-        <br/>
-
-    </div>*@
-    <style>
-    table, th, td {
-      border:1px solid black;   
-    }
-    </style>
-
-    <table style="width:100%">
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Prod#</th>
-    <th>Finished Goods</th>
-    <th>Color</th>
-    <th>Safety Stock Level</th>
-    <th>Standard Cost</th>
-    <th>List Price</th>
-    <th>Days to Manufacture</th>
-    <th>Sell Start Date</th>
-  </tr>
-
-
-  <tr ng-repeat = "product in products">
-     <td ng-bind="product.productId">  </td>
-     <td ng-bind="product.name">  </td>
-     <td ng-bind="product.productNumber"></td>
-     <td>{{product.finishedGoodsFlag ? "Yes" : "No"}}</td>
-
-         
-    
-     <td ng-bind="product.color">  </td>
-     <td ng-bind="product.safetyStockLevel">  </td>
-     <td ng-bind="'A$' + product.standardCost"> </td>
-     <td ng-bind="'A$' + product.listPrice"> </td>
-     <td ng-bind="product.daysToManufacture">  </td>
-     <td ng-bind="product.sellStartDate | date:'dd/MM/yyyy'">  </td>
-
-
-
-  </tr>
-  </table>
-
-
-
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Task1_SelfPractice_1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - FullStackTutorial - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-
-
-
     </footer>
-        @*angularjs*@
+
+    @*angularjs*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
