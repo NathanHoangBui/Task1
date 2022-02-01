@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/HbQAyNt4tzggT4VCKW0MrTE6POne5W+MGqsqAOCaQc=",
+  "Hash": "ADR11YmcXmir6Vjj6mEqcg97vbhGD+fsox1HoSr6S9c=",
   "Source": "Task1_SelfPractice_1",
   "BasePath": "_content/Task1_SelfPractice_1",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\task1.js"
+    },
+    {
+      "Identity": "C:\\Users\\Natha\\OneDrive - The University of Sydney (Students)\\Software Engineering\\Self Practice\\Task 1 Practice\\Task1_SelfPractice_1\\wwwroot\\js\\task2.js",
+      "SourceId": "Task1_SelfPractice_1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Natha\\OneDrive - The University of Sydney (Students)\\Software Engineering\\Self Practice\\Task 1 Practice\\Task1_SelfPractice_1\\wwwroot\\",
+      "BasePath": "_content/Task1_SelfPractice_1",
+      "RelativePath": "js/task2.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\task2.js"
     },
     {
       "Identity": "C:\\Users\\Natha\\OneDrive - The University of Sydney (Students)\\Software Engineering\\Self Practice\\Task 1 Practice\\Task1_SelfPractice_1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

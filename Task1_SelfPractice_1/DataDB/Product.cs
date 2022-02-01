@@ -8,7 +8,7 @@ namespace Task1_SelfPractice_1.DataDB
     /// Products sold or used in the manfacturing of sold products.
     /// </summary>
     /// 
-    [JsonObject]
+   
     public partial class Product
     {
        
@@ -33,13 +33,13 @@ namespace Task1_SelfPractice_1.DataDB
         /// Primary key for Product records.
         /// </summary>
         /// 
-        [JsonProperty]
+     
         public int ProductId { get; set; }
         /// <summary>
         /// Name of the product.
         /// </summary>
         /// 
-        [JsonProperty]
+      
 
         public string Name { get; set; } = null!;
         /// <summary>
@@ -47,7 +47,7 @@ namespace Task1_SelfPractice_1.DataDB
         /// </summary>
         /// 
 
-        [JsonProperty]
+
 
         public string ProductNumber { get; set; } = null!;
         /// <summary>
@@ -63,39 +63,39 @@ namespace Task1_SelfPractice_1.DataDB
         /// </summary>
         /// 
 
-        [JsonProperty]
-
+      
         public bool? FinishedGoodsFlag { get; set; }
         /// <summary>
         /// Product color.
         /// </summary>
         /// 
         /// 
-        [JsonProperty]
+       
         public string? Color { get; set; }
         /// <summary>
         /// Minimum inventory quantity. 
         /// </summary>
         /// 
-        [JsonProperty]
+      
         public short SafetyStockLevel { get; set; }
         /// <summary>
         /// Inventory level that triggers a purchase order or work order. 
         /// </summary>
         /// 
-        [JsonProperty]
+    
         public short ReorderPoint { get; set; }
         /// <summary>
         /// Standard cost of the product.
         /// </summary>
         /// 
-        [JsonProperty]
+     
         public decimal StandardCost { get; set; }
         /// <summary>
         /// Selling price.
         /// </summary>
         /// 
-        [JsonProperty]
+      
+
         public decimal ListPrice { get; set; }
         /// <summary>
         /// Product size.
@@ -117,7 +117,7 @@ namespace Task1_SelfPractice_1.DataDB
         /// Number of days required to manufacture the product.
         /// </summary>
         /// 
-        [JsonProperty]
+   
         public int DaysToManufacture { get; set; }
         /// <summary>
         /// R = Road, M = Mountain, T = Touring, S = Standard
@@ -134,6 +134,8 @@ namespace Task1_SelfPractice_1.DataDB
         /// <summary>
         /// Product is a member of this product subcategory. Foreign key to ProductSubCategory.ProductSubCategoryID. 
         /// </summary>
+        /// 
+     
         public int? ProductSubcategoryId { get; set; }
         /// <summary>
         /// Product is a member of this product model. Foreign key to ProductModel.ProductModelID.
@@ -143,7 +145,7 @@ namespace Task1_SelfPractice_1.DataDB
         /// Date the product was available for sale.
         /// </summary>
         /// 
-              [JsonProperty]
+   
         public DateTime SellStartDate { get; set; }
         /// <summary>
         /// Date the product was no longer available for sale.

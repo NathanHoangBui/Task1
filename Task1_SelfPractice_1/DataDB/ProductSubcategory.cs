@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace Task1_SelfPractice_1.DataDB
@@ -6,6 +7,8 @@ namespace Task1_SelfPractice_1.DataDB
     /// <summary>
     /// Product subcategories. See ProductCategory table.
     /// </summary>
+    /// 
+    [JsonObject]
     public partial class ProductSubcategory
     {
         public ProductSubcategory()
@@ -20,10 +23,14 @@ namespace Task1_SelfPractice_1.DataDB
         /// <summary>
         /// Product category identification number. Foreign key to ProductCategory.ProductCategoryID.
         /// </summary>
+        /// 
+        [JsonProperty]
         public int ProductCategoryId { get; set; }
         /// <summary>
         /// Subcategory description.
         /// </summary>
+        /// 
+        [JsonProperty]
         public string Name { get; set; } = null!;
         /// <summary>
         /// ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.

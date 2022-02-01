@@ -2,7 +2,7 @@
 
 namespace Task1_SelfPractice_1.Controllers
 {
-    public class TaskController : Controller
+    public class Task2Controller : Controller
     {
         public IActionResult Task1()
         {

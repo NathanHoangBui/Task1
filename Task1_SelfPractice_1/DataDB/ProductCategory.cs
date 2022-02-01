@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace Task1_SelfPractice_1.DataDB
@@ -6,8 +7,11 @@ namespace Task1_SelfPractice_1.DataDB
     /// <summary>
     /// High-level product categorization.
     /// </summary>
+    /// 
+
     public partial class ProductCategory
     {
+      
         public ProductCategory()
         {
             ProductSubcategories = new HashSet<ProductSubcategory>();
@@ -16,10 +20,15 @@ namespace Task1_SelfPractice_1.DataDB
         /// <summary>
         /// Primary key for ProductCategory records.
         /// </summary>
+        /// 
+ 
         public int ProductCategoryId { get; set; }
         /// <summary>
         /// Category description.
         /// </summary>
+        /// 
+     
+
         public string Name { get; set; } = null!;
         /// <summary>
         /// ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample.
