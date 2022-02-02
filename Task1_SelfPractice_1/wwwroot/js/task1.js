@@ -1,7 +1,8 @@
 ﻿(function ()
 {
     angular.module("Task1_SelfPractice_1").controller('task1', [
-        "$scope",
+        "$scope", 
+
         "$http",
         function (
             $scope,

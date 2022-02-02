@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Task2";
+}
+
+@section Scripts
+{
+    <script src="~/js/task2.js"></script>
+}
+
+<div ng-controller="task2"
+     ng-init="init()">
+    <h1>Task 2</h1>
+    <table style="width:100%">
+          <tr>
+              <th>Name</th>
+              <th>Prod#</th>  
+              <th> Color </th>
+              <th>Standard Cost</th>
+              <th>List Price</th>
+              <th>Sell Start Date</th>
+              <th>Category</th>
+              <th>Subcategory</th>       
+          </tr>
+          <tr ng-repeat ="productelement in products">
+              <td ng-bind="productelement.product.name"></td>
+              <td ng-bind="productelement.product.productNumber"></td>
+              <td ng-bind="productelement.product.color"></td>
+              <td ng-bind="'A$' + productelement.product.standardCost"> </td>
+              <td ng-bind="'A$' + productelement.product.listPrice"> </td>
+              <td ng-bind="productelement.product.sellStartDate | date:'dd/MM/yyyy'">  </td>
+              <td ng-bind="productelement.category.name"></td>
+              <td ng-bind="productelement.subcategory.name"></td   
+          </tr>
+     </table>
+</div>
