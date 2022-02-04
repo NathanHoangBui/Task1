@@ -11,24 +11,21 @@
             var getProduct = function ()
             {
                 return $http({
-                    method: 'GET',
-                    url: '/api/product/get-category'
+                        method: 'GET',
+                        url: '/api/product/get-category'
                 }).then(function successCallback(response)
                 {
-                    $scope.products = response.data;
-                }, function errorCallback(response)
+                        $scope.products = response.data;
+                },      function errorCallback(response)
                 {
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                 });
             }
-
             $scope.init = function ()
             {
                 return getProduct();
             }
-
-
         }
     ])
 

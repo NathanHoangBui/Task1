@@ -2,7 +2,7 @@
 
 namespace Task1_SelfPractice_1.Controllers
 {
-    public class TaskController : Controller
+   public class TaskController : Controller
     {
         public IActionResult Task1()
         {
@@ -12,5 +12,10 @@ namespace Task1_SelfPractice_1.Controllers
         {
             return View();
         }
+        public IActionResult Task3()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\wwwroot",
-    "\\wwwroot\\js"
+    "\\Views",
+    "\\Views\\Home",
+    "\\Views\\Shared",
+    "\\Views\\Task"
   ],
-  "SelectedNode": "\\wwwroot\\js\\task1.js",
+  "SelectedNode": "\\Views\\Task\\Task1.cshtml",
   "PreviewInSolutionExplorer": false
 }

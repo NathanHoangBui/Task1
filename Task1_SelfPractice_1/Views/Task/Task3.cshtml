@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Task3";
+}
+@section Scripts
+{
+    <script src="~/js/task3.js"></script>
+}
+<div ng-controller="task3"
+     ng-init="init()">
+    <h1>Task 3</h1>
+      <label for="searchLabel">Options</label>  
+      <select id="searchOption" name="searchOption" ng-model="optionValue" ng-change= "updateOption()">  
+        <option selected= "selected" value = "1">Finished Products Only</option>
+        <option value="2">All Products</option>
+      </select>
+    <table style="width:100%">
+          <tr>
+            <th>Name</th>
+            <th>Prod#</th>
+            <th>Color</th>
+            <th>Standard Cost</th>
+            <th>List Price</th>
+            <th>Sell Start Date</th>
+            <th>Category</th>
+            <th>Subcategory</th>       
+          </tr>
+          <tr ng-repeat= "productelement in products">
+              <td ng-bind="productelement.product.name"></td>
+              <td ng-bind="productelement.product.productNumber"></td>
+              <td ng-bind="productelement.product.color"></td>
+              <td ng-bind="'A$' + productelement.product.standardCost"></td>
+              <td ng-bind="'A$' + productelement.product.listPrice"> </td>
+              <td ng-bind="productelement.product.sellStartDate | date:'dd/MM/yyyy'"></td>
+              <td ng-bind="productelement.category.name"></td>
+              <td ng-bind="productelement.subcategory.name"></td>
+          </tr>
+    </table>
+</div>
+

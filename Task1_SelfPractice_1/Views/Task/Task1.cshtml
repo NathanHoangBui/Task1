@@ -2,16 +2,13 @@
 @{
     ViewData["Title"] = "Task1";
 }
-
 @section Scripts
 {
     <script src="~/js/task1.js"></script>
 }
-
 <div ng-controller="task1"
      ng-init="init()">
     <h1>Task 1</h1>
-
     <table style="width:100%">
           <tr>
             <th>ID</th>
@@ -25,7 +22,6 @@
             <th>Days to Manufacture</th>
             <th>Sell Start Date</th>
           </tr>
-
           <tr ng-repeat = "product in products">
              <td ng-bind="product.productId"></td>
              <td ng-bind="product.name"></td>

@@ -166,12 +166,29 @@ namespace Task1_SelfPractice_1.Controllers
                         productdata.SellStartDate = SellDate;
 
                         ProductCategory category = new ProductCategory();
-                        category.Name = (string)sqlDataReader["categoryName"];
+                        
+                        if (sqlDataReader["categoryName"] is System.DBNull)
+                        {
+                            category.Name = "";
+                        }
+                        else
+                        {
+                            category.Name = (string)sqlDataReader["categoryName"];
 
-               
-                   
+                        }
+
+
                         ProductSubcategory subcategory = new ProductSubcategory();
                         subcategory.Name = (string)sqlDataReader["subCategoryName"];
+                        if (sqlDataReader["subCategoryName"] is System.DBNull)
+                        {
+                            subcategory.Name = "";
+                        }
+                        else
+                        {
+                            subcategory.Name = (string)sqlDataReader["subCategoryName"];
+
+                        }
 
                         subcategory.ProductSubcategoryId = (int)sqlDataReader["ProductSubcategoryId"];
 
@@ -182,6 +199,129 @@ namespace Task1_SelfPractice_1.Controllers
                         productElement.category = category;
                         product.Add(productElement);
                       
+
+
+
+
+
+
+
+
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+            return product;
+
+        }
+
+        [HttpGet("get-task3part2")]   // /api/product/get-category
+        public List<ProductInformation>? GetAllTask3()
+
+        {
+
+            List<ProductInformation> product = new List<ProductInformation>();
+            using (SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("Task1_SelfPractice_1")))
+            {
+                conn.Open();
+                try
+                {
+
+                    //string sql = $"SELECT Product.Name,ProductID,ProductNumber,FinishedGoodsFlag,Color,SafetyStockLevel,SafetyStockLevel,ListPrice,DaysToManufacture,SellStartDate,StandardCost" +
+                    //    $" FROM Production.Product" +
+                    //    $" ORDER BY ReorderPoint DESC, Name ASC;";
+
+                    string sql = $"SELECT p.FinishedGoodsFlag,p.Name,p.ProductNumber,p.Color,p.StandardCost,p.ListPrice,p.SellStartDate,pc.Name as categoryName,psc.Name as subCategoryName,psc.ProductSubcategoryId  " +
+                                  $"FROM Production.Product as p " +
+                                  $"LEFT JOIN " +
+                                  $"Production.ProductSubCategory as psc " +
+                                  $"on p.ProductSubcategoryID = psc.ProductSubcategoryID " +
+                                  $"LEFT JOIN " +
+                                  $"Production.ProductCategory as pc " +
+                                  $"on pc.ProductCategoryID = psc.ProductCategoryID;";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    while (sqlDataReader.Read())
+
+                    {
+
+                        ProductInformation productElement = new ProductInformation();
+
+                        //! This to create a Product inside ProductInformation
+                        Product productdata = new Product();
+
+                        productdata.Name = (string)sqlDataReader["Name"];
+                        productdata.ProductNumber = (string)sqlDataReader["ProductNumber"];
+                        if (sqlDataReader["Color"] is System.DBNull)
+                        {
+                            productdata.Color = "";
+                        }
+                        else
+                        {
+                            productdata.Color = (string)sqlDataReader["Color"];
+
+                        }
+
+                        productdata.StandardCost = (decimal)sqlDataReader["StandardCost"];
+                        productdata.ListPrice = (decimal)sqlDataReader["ListPrice"];
+                        DateTime SellStartDate = (System.DateTime)sqlDataReader["SellStartDate"];
+                        var SellDate = SellStartDate.Date;
+                        productdata.SellStartDate = SellDate;
+                        productdata.FinishedGoodsFlag = (bool)sqlDataReader["FinishedGoodsFlag"];
+
+                        ProductCategory category = new ProductCategory();
+                        if (sqlDataReader["categoryName"] is System.DBNull)
+                        {
+                            category.Name = "";
+                        }
+                        else
+                        {
+                            category.Name = (string)sqlDataReader["categoryName"];
+
+                        }
+
+
+
+                        ProductSubcategory subcategory = new ProductSubcategory();
+                        if (sqlDataReader["subCategoryName"] is System.DBNull)
+                        {
+                            subcategory.Name = "";
+                        }
+                        else
+                        {
+                            subcategory.Name = (string)sqlDataReader["subCategoryName"];
+
+                        }
+
+                  
+                        if (sqlDataReader["ProductSubcategoryId"] is System.DBNull)
+                        {
+                            subcategory.ProductSubcategoryId = -1;
+                        }
+                        else
+                        {
+                            subcategory.ProductSubcategoryId = (int)sqlDataReader["ProductSubcategoryId"];
+
+                        }
+
+
+
+                        productElement.product = productdata;
+                        productElement.subcategory = subcategory;
+                        productElement.category = category;
+                        product.Add(productElement);
+
 
 
 
